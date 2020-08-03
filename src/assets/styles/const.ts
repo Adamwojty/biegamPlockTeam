@@ -18,6 +18,7 @@ export enum Colors {
   LIGHT_GREY = "rgb(248,248,248)",
 }
 export enum Media {
+  MOBILE_L = "(min-width: 600px)",
   TABLET = "(min-width: 900px)",
   LAPTOP = "(min-width: 1400px)",
 }

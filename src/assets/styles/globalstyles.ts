@@ -11,10 +11,10 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     margin: 0;
-    padding: 30px 20px;
+    padding: 80px 20px;
     font-family: 'Montserrat';
     @media ${Media.TABLET} {
-      padding: 30px 50px;
+      padding: 100px 50px 0;
     }
   }
   a {

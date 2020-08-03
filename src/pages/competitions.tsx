@@ -13,7 +13,7 @@ const Wrapper = styled.main`
 
 export const query = graphql`
   query CompetitionsQuerry {
-    allDatoCmsZawody {
+    allDatoCmsCompetition {
       nodes {
         title
         description
@@ -41,7 +41,7 @@ interface CompetitionInterface {
 }
 
 interface CompetitionsInterface {
-  allDatoCmsZawody: {
+  allDatoCmsCompetition: {
     nodes: CompetitionInterface[]
   }
 }
@@ -50,7 +50,7 @@ const Competitions: React.FC<PageProps<CompetitionsInterface>> = ({ data }) => (
     <SEO title="Competitions" />
     <Wrapper>
       <h1>Zbliżające się zawody:</h1>
-      {data.allDatoCmsZawody.nodes.map(item => (
+      {data.allDatoCmsCompetition.nodes.map(item => (
         <Competition key={item.title} {...item} />
       ))}
     </Wrapper>

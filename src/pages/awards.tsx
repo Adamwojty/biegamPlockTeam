@@ -4,10 +4,30 @@ import SEO from "../components/seo"
 
 const Awards: React.FC = () => (
   <>
-    <SEO title="Home" />
+    <SEO title="Awards" />
     <h1>Osiągnięcia</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Zawody</th>
+          <th>Zawodnik</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Zawody</td>
+          <td>Zawodnik</td>
+        </tr>
+        <tr>
+          <td>The table body</td>
+          <td>with two columns</td>
+        </tr>
+        <tr>
+          <td>The table body</td>
+          <td>with two columns</td>
+        </tr>
+      </tbody>
+    </table>
   </>
 )
 

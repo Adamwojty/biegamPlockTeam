@@ -9,10 +9,8 @@ import { Media } from "../assets/styles/const"
 const Wrapper = styled.main<{ background: string }>`
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
   background-repeat: no-repeat;
   @media ${Media.TABLET} {
-    margin-top: 75px;
     background-image: ${({ background }) => `url('${background}')`};
     background-position: right;
   }
@@ -32,7 +30,6 @@ interface IndexPageInterface {
 
 const IndexPage: React.FC<PageProps<IndexPageInterface>> = ({ data }) => (
   <>
-    {console.log(data.file.publicURL)}
     <SEO title="Home" />
     <Wrapper background={data.file.publicURL}>
       <TeamPreview />

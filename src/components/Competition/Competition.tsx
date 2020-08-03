@@ -1,14 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import Image, { FluidObject } from "gatsby-image"
-import StyledLink from "../Link/Link"
-import { Colors, FontSize, Media } from "../../assets/styles/const"
+import { Colors, FontSize, Media, FontWeight } from "../../assets/styles/const"
 
 const Wrapper = styled.section`
   margin: 30px 0;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+
   @media ${Media.TABLET} {
     flex-direction: row;
     margin: 30px 0;
@@ -22,7 +21,15 @@ const ContentWrapper = styled.article`
     margin: 10px 0 0;
   }
 `
-const CompetitionLink = styled(StyledLink)`
+const CompetitionLink = styled.a`
+  border-radius: 10px;
+  display: block;
+  font-weight: ${FontWeight.SEMIBOLD};
+  font-size: ${FontSize.TEXT_NORMAL};
+  padding: 14px 0;
+  width: 200px;
+  max-height: 50px;
+  text-align: center;
   background-color: ${Colors.BLUE};
   color: ${Colors.WHITE};
 `
@@ -63,7 +70,7 @@ const Competition: React.FC<CompetitionInterface> = ({
       <h2>{title}</h2>
       <Date>{date}</Date>
       <p>{description}</p>
-      <CompetitionLink to={link}>Odwiedź stronę &rarr;</CompetitionLink>
+      <CompetitionLink href={link}>Odwiedź stronę &rarr;</CompetitionLink>
     </ContentWrapper>
   </Wrapper>
 )

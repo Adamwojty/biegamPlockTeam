@@ -6,12 +6,14 @@ import { FontWeight, FontSize, Colors, Media } from "../../assets/styles/const"
 
 const Wrapper = styled.nav<{ active: boolean }>`
   position: fixed;
-  top: 30px;
-  left: 20px;
-  right: 20px;
+  padding: 30px 20px 10px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
   display: flex;
   justify-content: space-between;
-  z-index: 2;
+  z-index: 4;
+  background-color: white;
   a {
     text-decoration: none;
     color: ${({ active }) => (active ? `${Colors.WHITE}` : `${Colors.BLACK}`)};
@@ -22,6 +24,7 @@ const Wrapper = styled.nav<{ active: boolean }>`
   @media ${Media.TABLET} {
     left: 50px;
     right: 50px;
+    padding: 30px 0 10px;
   }
 `
 const Logo = styled(Link)`
@@ -80,30 +83,37 @@ const Hamburger = styled.button<{ active: boolean }>`
 const Navigation: React.FC = () => {
   const [active, setActive] = React.useState<boolean>(false)
   const [disabled, setDisabled] = React.useState<boolean>(false)
-  const handleNavigation = () => {
-    setActive(!active)
+  const handleNavigationOpen = () => {
+    setActive(true)
     setDisabled(true)
     return setTimeout(() => setDisabled(false), 700)
   }
+  const handleNavigationClose = () => {
+    setActive(false)
+  }
   return (
     <Wrapper active={active}>
-      <Logo to={Routes.HOME} onClick={() => setActive(false)}>
+      <Logo to={Routes.HOME} onClick={handleNavigationClose}>
         biegamPłock team
       </Logo>
-      <Hamburger onClick={handleNavigation} active={active} disabled={disabled}>
+      <Hamburger
+        onClick={handleNavigationOpen}
+        active={active}
+        disabled={disabled}
+      >
         Menu
       </Hamburger>
       <NavigationList active={active}>
-        <NavigationListItem onClick={handleNavigation}>
+        <NavigationListItem onClick={handleNavigationClose}>
           <Link to={Routes.ABOUT}>o nas</Link>
         </NavigationListItem>
-        <NavigationListItem onClick={handleNavigation}>
+        <NavigationListItem onClick={handleNavigationClose}>
           <Link to={Routes.COMPETITIONS}>zawody</Link>
         </NavigationListItem>
-        <NavigationListItem onClick={handleNavigation}>
+        <NavigationListItem onClick={handleNavigationClose}>
           <Link to={Routes.BLOG}>blog</Link>
         </NavigationListItem>
-        <NavigationListItem onClick={handleNavigation}>
+        <NavigationListItem onClick={handleNavigationClose}>
           <Link to={Routes.CONTACT}>kontakt</Link>
         </NavigationListItem>
       </NavigationList>
