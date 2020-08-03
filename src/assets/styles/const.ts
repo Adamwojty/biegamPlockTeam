@@ -9,6 +9,7 @@ export enum FontSize {
   HEADER_NORMAL = "20px",
   HEADER_SMALL = "15px",
   TEXT_NORMAL = "18px",
+  TEXT_SMALL = "14px",
 }
 export enum Colors {
   BLUE = "rgba(9, 60, 161, 1)",

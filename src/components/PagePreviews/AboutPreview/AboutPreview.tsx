@@ -13,7 +13,7 @@ const Wrapper = styled.section`
   @media ${Media.TABLET} {
     margin: 0;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 `
 const ContentWrapper = styled.article`
@@ -56,8 +56,7 @@ const StyledImage = styled(Image)`
   height: 200px;
   margin: 0 auto;
   @media ${Media.TABLET} {
-    order: 1;
-    margin: 0 0 0 50px;
+    margin: 20px 50px 0 0;
     width: 280px;
     height: 280px;
   }

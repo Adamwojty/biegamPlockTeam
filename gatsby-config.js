@@ -1,3 +1,4 @@
+require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: `biegamPlock Team `,
@@ -41,6 +42,12 @@ module.exports = {
             },
           ],
         },
+      },
+    },
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: process.env.DATO_CMS,
       },
     },
   ],
