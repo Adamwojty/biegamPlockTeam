@@ -7,7 +7,7 @@ import { Media, FontSize, Colors } from "../assets/styles/const"
 import Picutre from "../components/Picture/Picture"
 import StyledLink from "../components/Link/Link"
 const Wrapper = styled.article`
-  margin: 50px 0 100px;
+  margin: 20px 0 100px;
   display: flex;
   flex-direction: column;
 `
