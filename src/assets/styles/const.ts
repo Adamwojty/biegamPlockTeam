@@ -10,6 +10,7 @@ export enum FontSize {
   HEADER_SMALLBIG = "28px",
   HEADER_NORMAL = "20px",
   HEADER_SMALL = "15px",
+  TEXT_BIG = "24px",
   TEXT_NORMAL = "18px",
   TEXT_SMALL = "14px",
 }

@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { graphql, PageProps } from "gatsby"
 import SEO from "../components/seo"
 import AboutPreview from "../components/PagePreviews/AboutPreview/AboutPreview"
-import TeamPreview from "../components/PagePreviews/TeamPreview/TeamPreview"
+import HeroSection from "../components/PagePreviews/HeroSection/HeroSection"
 import { Media } from "../assets/styles/const"
 
 const Wrapper = styled.main`
@@ -21,7 +21,7 @@ const IndexPage: React.FC<PageProps<IndexPageInterface>> = () => (
   <>
     <SEO title="Home" />
     <Wrapper>
-      <TeamPreview />
+      <HeroSection />
       <AboutPreview />
     </Wrapper>
   </>

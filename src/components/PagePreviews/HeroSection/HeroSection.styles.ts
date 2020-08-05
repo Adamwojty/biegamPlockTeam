@@ -1,12 +1,9 @@
-import React from "react"
 import styled from "styled-components"
-import { useStaticQuery, graphql } from "gatsby"
-import Image, { FluidObject } from "gatsby-image"
+import Image from "gatsby-image"
 import StyledLink from "../../Link/Link"
-import { Routes } from "../../../config/routes"
 import { Colors, FontSize, Media } from "../../../assets/styles/const"
-import facebook from "../../../assets/images/facebook.png"
-const Wrapper = styled.section`
+
+export const Wrapper = styled.section`
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -36,7 +33,7 @@ const Wrapper = styled.section`
     }
   }
 `
-const ContentWrapper = styled.div`
+export const ContentWrapper = styled.div`
   z-index: 3;
   display: flex;
   flex-direction: column;
@@ -49,7 +46,7 @@ const ContentWrapper = styled.div`
   }
 `
 
-const ContactLink = styled(StyledLink)`
+export const ContactLink = styled(StyledLink)`
   color: ${Colors.WHITE};
   background-color: ${Colors.BLUE};
   @media ${Media.TABLET} {
@@ -57,7 +54,7 @@ const ContactLink = styled(StyledLink)`
     margin: 20px 0 0 auto;
   }
 `
-const ImgWrapper = styled.div`
+export const ImgWrapper = styled.div`
   position: relative;
   border-radius: 20px;
   width: 280px;
@@ -92,7 +89,7 @@ const ImgWrapper = styled.div`
     }
   }
 `
-const Icon = styled.img`
+export const Icon = styled.img`
   position: absolute;
   display: none;
   @media ${Media.TABLET} {
@@ -102,56 +99,11 @@ const Icon = styled.img`
   }
   @media ${Media.LAPTOP} {
     bottom: 400px;
-    left: -135px;
+    left: -137px;
   }
 `
-const StyledImage = styled(Image)`
+export const Img = styled(Image)`
   width: 100%;
   height: 100%;
   border-radius: inherit;
 `
-
-const query = graphql`
-  {
-    file(name: { eq: "hero" }) {
-      childImageSharp {
-        fluid(maxWidth: 600, quality: 100) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-  }
-`
-interface AboutSectionInterface {
-  file: {
-    childImageSharp: {
-      fluid: FluidObject
-    }
-  }
-}
-
-const AboutPreview: React.FC = () => {
-  const data = useStaticQuery<AboutSectionInterface>(query)
-  return (
-    <Wrapper>
-      <ImgWrapper>
-        <StyledImage
-          fluid={data.file.childImageSharp.fluid}
-          alt="biegamPlockTeam Members"
-        />
-        <a
-          href="https://www.facebook.com/biegamP%C5%82ock-team-276934665749060"
-          target="blank"
-        >
-          <Icon src={facebook} />
-        </a>
-      </ImgWrapper>
-      <ContentWrapper>
-        <h1>Drużyna biegowa</h1>
-        <h2>biegamPłock Team</h2>
-        <ContactLink to={Routes.CONTACT}>Dołącz do nas</ContactLink>
-      </ContentWrapper>
-    </Wrapper>
-  )
-}
-export default AboutPreview
