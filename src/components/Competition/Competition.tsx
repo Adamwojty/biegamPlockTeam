@@ -70,7 +70,9 @@ const Competition: React.FC<CompetitionInterface> = ({
       <h2>{title}</h2>
       <Date>{date}</Date>
       <p>{description}</p>
-      <CompetitionLink href={link}>Odwiedź stronę &rarr;</CompetitionLink>
+      <CompetitionLink href={link} target="blank">
+        Odwiedź stronę &rarr;
+      </CompetitionLink>
     </ContentWrapper>
   </Wrapper>
 )

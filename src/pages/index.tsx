@@ -6,32 +6,21 @@ import AboutPreview from "../components/PagePreviews/AboutPreview/AboutPreview"
 import TeamPreview from "../components/PagePreviews/TeamPreview/TeamPreview"
 import { Media } from "../assets/styles/const"
 
-const Wrapper = styled.main<{ background: string }>`
+const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
-  background-repeat: no-repeat;
-  @media ${Media.TABLET} {
-    background-image: ${({ background }) => `url('${background}')`};
-    background-position: right;
-  }
 `
-export const query = graphql`
-  {
-    file(name: { eq: "background" }) {
-      publicURL
-    }
-  }
-`
+
 interface IndexPageInterface {
   file: {
     publicURL: string
   }
 }
 
-const IndexPage: React.FC<PageProps<IndexPageInterface>> = ({ data }) => (
+const IndexPage: React.FC<PageProps<IndexPageInterface>> = () => (
   <>
     <SEO title="Home" />
-    <Wrapper background={data.file.publicURL}>
+    <Wrapper>
       <TeamPreview />
       <AboutPreview />
     </Wrapper>

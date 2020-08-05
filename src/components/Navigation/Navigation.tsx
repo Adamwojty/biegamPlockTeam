@@ -22,8 +22,8 @@ const Wrapper = styled.nav<{ active: boolean }>`
     }
   }
   @media ${Media.TABLET} {
-    left: 50px;
-    right: 50px;
+    left: 30px;
+    right: 30px;
     padding: 30px 0 10px;
   }
 `
@@ -84,7 +84,7 @@ const Navigation: React.FC = () => {
   const [active, setActive] = React.useState<boolean>(false)
   const [disabled, setDisabled] = React.useState<boolean>(false)
   const handleNavigationOpen = () => {
-    setActive(true)
+    setActive(!active)
     setDisabled(true)
     return setTimeout(() => setDisabled(false), 700)
   }

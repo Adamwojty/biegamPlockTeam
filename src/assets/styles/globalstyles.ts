@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 80px 20px;
     font-family: 'Montserrat';
     @media ${Media.TABLET} {
-      padding: 100px 50px 0;
+      padding: 100px 30px 0;
     }
   }
   a {

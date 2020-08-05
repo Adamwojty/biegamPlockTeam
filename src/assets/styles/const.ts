@@ -4,8 +4,10 @@ export enum FontWeight {
   BOLD = "800",
 }
 export enum FontSize {
+  HEADER_XBIG = "72px",
   HEADER_BIG = "48px",
   HEADER_SUBBIG = "36px",
+  HEADER_SMALLBIG = "28px",
   HEADER_NORMAL = "20px",
   HEADER_SMALL = "15px",
   TEXT_NORMAL = "18px",
@@ -16,6 +18,7 @@ export enum Colors {
   WHITE = "rgba(255, 255, 255, 1)",
   BLACK = "rgba(0,0,0,1)",
   LIGHT_GREY = "rgb(248,248,248)",
+  ORANGE = "rgba(222, 93, 54, 1)",
 }
 export enum Media {
   MOBILE_L = "(min-width: 600px)",

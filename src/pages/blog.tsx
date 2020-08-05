@@ -10,7 +10,7 @@ import { Media } from "../assets/styles/const"
 const Wrapper = styled.main`
   margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+  grid-template-columns: repeat(auto-fill, 300px);
   grid-gap: 10px;
   justify-content: center;
   @media ${Media.TABLET} {

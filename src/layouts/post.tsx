@@ -30,13 +30,21 @@ const Author = styled.p`
   margin: 0;
 `
 const Header = styled.h3`
+  max-width: 85%;
   font-size: ${FontSize.HEADER_NORMAL};
-  margin: 5px 0 10px;
+  margin: 5px auto 10px;
+`
+const Paragraph = styled.p`
+  margin: 25px auto;
+  max-width: 85%;
 `
 const BackLink = styled(StyledLink)`
-  margin-top: 25px;
+  margin: 25px auto;
   color: ${Colors.WHITE};
   background-color: ${Colors.BLUE};
+  @media ${Media.MOBILE_L} {
+    margin: 25px 0 0 auto;
+  }
 `
 
 export const query = graphql`
@@ -105,7 +113,7 @@ const PostLayout: React.FC<PageProps<PostInterface>> = ({ data }) => {
     const itemKey = Object.keys(item)[2]
     switch (itemKey) {
       case "description":
-        return <p key={item.id}>{item[itemKey]}</p>
+        return <Paragraph key={item.id}>{item[itemKey]}</Paragraph>
       case "heading":
         return <Header key={item.id}>{item[itemKey]}</Header>
       case "picture":
