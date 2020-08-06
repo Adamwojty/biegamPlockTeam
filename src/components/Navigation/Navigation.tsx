@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import {
   Wrapper,
   Logo,
@@ -9,7 +9,20 @@ import {
 } from "./Navigation.styles"
 import { Routes } from "../../config/routes"
 
+const query = graphql`
+  {
+    file(name: { eq: "logo" }) {
+      childImageSharp {
+        fluid(maxHeight: 50, quality: 100) {
+          src
+        }
+      }
+    }
+  }
+`
+
 const Navigation: React.FC = () => {
+  const data = useStaticQuery(query)
   const [active, setActive] = React.useState<boolean>(false)
   const [disabled, setDisabled] = React.useState<boolean>(false)
   const handleNavigationOpen = () => {
@@ -23,7 +36,8 @@ const Navigation: React.FC = () => {
   return (
     <Wrapper active={active}>
       <Logo to={Routes.HOME} onClick={handleNavigationClose}>
-        biegamPłock team
+        <img src={data.file.childImageSharp.fluid.src} />
+        <p>biegamPłock team</p>
       </Logo>
       <Hamburger
         onClick={handleNavigationOpen}

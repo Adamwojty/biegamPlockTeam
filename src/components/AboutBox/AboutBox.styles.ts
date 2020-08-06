@@ -2,9 +2,10 @@ import styled from "styled-components"
 import Image from "gatsby-image"
 import { Colors, FontSize, Media } from "../../assets/styles/const"
 import StyledLink from "../Link/Link"
-export const Wrapper = styled.section`
+export const Wrapper = styled.div`
   color: ${Colors.WHITE};
   padding: 20px;
+  overflow: hidden;
   h2 {
     font-size: ${FontSize.HEADER_BIG};
     margin-bottom: 10px;

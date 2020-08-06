@@ -1,51 +1,17 @@
 import React from "react"
-import styled from "styled-components"
-import Image, { FluidObject } from "gatsby-image"
+import { FluidObject } from "gatsby-image"
 import { graphql, PageProps } from "gatsby"
 import Slider from "../components/Slider/Slider"
-import { Media, FontSize, Colors } from "../assets/styles/const"
 import Picutre from "../components/Picture/Picture"
-import StyledLink from "../components/Link/Link"
-const Wrapper = styled.article`
-  margin: 20px 0 100px;
-  display: flex;
-  flex-direction: column;
-`
-const StyledImage = styled(Image)`
-  margin: 0 auto 30px auto;
-  width: 280px;
-  @media ${Media.MOBILE_L} {
-    width: 500px;
-  }
-  @media ${Media.TABLET} {
-    width: 700px;
-    margin: 50px auto;
-  }
-`
-const Title = styled.h2`
-  margin: 10px 0 5px;
-`
-const Author = styled.p`
-  font-size: ${FontSize.TEXT_SMALL};
-  margin: 0;
-`
-const Header = styled.h3`
-  max-width: 85%;
-  font-size: ${FontSize.HEADER_NORMAL};
-  margin: 5px auto 10px;
-`
-const Paragraph = styled.p`
-  margin: 25px auto;
-  max-width: 85%;
-`
-const BackLink = styled(StyledLink)`
-  margin: 25px auto;
-  color: ${Colors.WHITE};
-  background-color: ${Colors.BLUE};
-  @media ${Media.MOBILE_L} {
-    margin: 25px 0 0 auto;
-  }
-`
+import {
+  Wrapper,
+  StyledImage,
+  Title,
+  Author,
+  Header,
+  Paragraph,
+  BackLink,
+} from "./post.styles"
 
 export const query = graphql`
   query querySingleArticle($id: String!) {
@@ -79,7 +45,7 @@ export const query = graphql`
       }
       gallery {
         fluid(maxWidth: 700, maxHeight: 700) {
-          ...GatsbyDatoCmsFluid_tracedSVG
+          src
         }
       }
     }
@@ -100,7 +66,7 @@ interface PostInterface {
     author: string
     title: string
     date: string
-    gallery: FluidObject[]
+    gallery: { fluid: { src: string } }[]
     featuredImage: {
       fluid: FluidObject
     }
@@ -131,9 +97,8 @@ const PostLayout: React.FC<PageProps<PostInterface>> = ({ data }) => {
         </Author>
         {data.datoCmsArticle.gallery.length > 1 ? (
           <Slider data={data.datoCmsArticle.gallery} />
-        ) : (
-          <StyledImage fluid={data.datoCmsArticle.featuredImage.fluid} />
-        )}
+        ) : // <StyledImage fluid={data.datoCmsArticle.featuredImage.fluid} />
+        null}
         <div>
           {data.datoCmsArticle.articleContent.map(item => {
             return handleRenderComponents(item)

@@ -15,6 +15,7 @@ export const Wrapper = styled.nav<{ active: boolean }>`
   a {
     text-decoration: none;
     color: ${({ active }) => (active ? `${Colors.WHITE}` : `${Colors.BLACK}`)};
+    margin: 0;
     @media ${Media.TABLET} {
       color: ${Colors.BLACK};
     }
@@ -27,10 +28,22 @@ export const Wrapper = styled.nav<{ active: boolean }>`
 `
 export const Logo = styled(Link)`
   transition: 0.5s ease-in-out;
-  margin: auto 0;
+  display: flex;
+  margin: auto 20px;
   z-index: 3;
   font-weight: ${FontWeight.BOLD};
-  font-size: ${FontSize.HEADER_NORMAL};
+  img {
+    height: 50px;
+    margin: auto 0;
+  }
+  p {
+    margin-left: 10px;
+    font-size: ${FontSize.HEADER_SMALL};
+
+    @media ${Media.TABLET} {
+      font-size: ${FontSize.HEADER_NORMAL};
+    }
+  }
 `
 export const NavigationList = styled.ul<{ active: boolean }>`
   transition: 0.5s ease-in;
@@ -52,6 +65,7 @@ export const NavigationList = styled.ul<{ active: boolean }>`
     transform: translateX(0px);
     background-color: transparent;
     position: relative;
+    margin: auto 0;
     flex-direction: row;
   }
 `
@@ -73,6 +87,7 @@ export const Hamburger = styled.button<{ active: boolean }>`
   font-size: ${FontSize.HEADER_SMALL};
   font-weight: ${FontWeight.BOLD};
   color: ${({ active }) => (active ? `${Colors.WHITE}` : `${Colors.BLACK}`)};
+  margin: auto 0;
   @media ${Media.TABLET} {
     display: none;
   }

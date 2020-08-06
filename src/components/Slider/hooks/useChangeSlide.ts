@@ -1,7 +1,6 @@
 import { useState } from "react"
-import { FluidObject } from "gatsby-image"
 
-export const useChangeSlide = (data: FluidObject[]) => {
+export const useChangeSlide = (data: { fluid: { src: string } }[]) => {
   const [activeImg, setActiveImg] = useState<number>(0)
   const handleImageChangeForward = () => {
     if (activeImg === data.length - 1) {

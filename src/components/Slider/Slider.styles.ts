@@ -3,25 +3,14 @@ import { Media, Colors } from "../../assets/styles/const"
 
 export const Wrapper = styled.div`
   margin: 30px auto;
-  position: relative;
-  width: 280px;
-  @media ${Media.MOBILE_L} {
-    width: 500px;
-  }
-  @media ${Media.TABLET} {
-    width: 70%;
-    margin: 50px auto;
-  }
-`
-export const ImageWrapper = styled.div`
-  margin: 0 auto;
   overflow: hidden;
   height: 200px;
+  width: 80%;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   @media ${Media.MOBILE_L} {
-    height: 350px;
+    height: 300px;
   }
   @media ${Media.TABLET} {
     height: 500px;
@@ -30,6 +19,25 @@ export const ImageWrapper = styled.div`
     height: 700px;
   }
 `
+
+export const ImageWrapper = styled.div<{ length: number; active: number }>`
+  display: flex;
+  height: 100%;
+  flex-shrink: 0;
+  transition: 0.5s ease-in-out;
+  width: ${({ length }) => `calc(100% * ${length})`};
+  transform: ${({ active, length }) =>
+    `translateX(calc((100% / ${length})* ${active}))`};
+`
+export const Img = styled.div<{ src: string; length: number }>`
+  background-image: ${({ src }) => `url('${src}')`};
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  flex-basis: ${({ length }) => `calc(100% / ${length})`};
+  flex-shrink: 0;
+`
+
 const Arrow = styled.button`
   outline: none;
   z-index: 2;
@@ -43,16 +51,22 @@ const Arrow = styled.button`
   background-color: transparent;
 `
 export const ArrowForward = styled(Arrow)`
-  right: 0px;
+  right: 10px;
   transform: rotate(45deg);
   @media ${Media.MOBILE_L} {
-    right: -30px;
+    right: 30px;
+  }
+  @media ${Media.TABLET} {
+    right: 10px;
   }
 `
 export const ArrowBackwards = styled(Arrow)`
-  left: 0;
+  left: 10px;
   transform: rotate(-135deg);
   @media ${Media.MOBILE_L} {
-    left: -30px;
+    left: 30px;
+  }
+  @media ${Media.TABLET} {
+    left: 10px;
   }
 `
