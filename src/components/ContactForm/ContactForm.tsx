@@ -24,19 +24,22 @@ const ContactForm: React.FC = () => (
       validateOnChange={false}
       validateOnBlur={false}
       onSubmit={(values, { setSubmitting }) => {
-        postMsg(
-          encode({
-            "form-name": "contact-form",
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encode({
+            "form-name": "contact",
             ...values,
-          })
-        )
-        encode({
-          "form-name": "contact-form",
-          ...values,
+          }),
         })
-        setTimeout(() => {
-          setSubmitting(false)
-        }, 400)
+          .then(() => {
+            alert("Success!")
+            setSubmitting(false)
+          })
+          .catch(error => {
+            alert("Error: Please Try Again!")
+            setSubmitting(false)
+          })
       }}
     >
       {({ errors, isSubmitting }) => (
