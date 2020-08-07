@@ -30,6 +30,10 @@ const ContactForm: React.FC = () => (
             ...values,
           })
         )
+        encode({
+          "form-name": "contact-form",
+          ...values,
+        })
         setTimeout(() => {
           setSubmitting(false)
         }, 400)
@@ -41,6 +45,8 @@ const ContactForm: React.FC = () => (
           name="contact-form"
           data-netliy-honeypot="bot-field"
         >
+          <Field type="hidden" name="bot-field" />
+          <Field type="hidden" name="form-name" value="contact-form" />
           <Label htmlFor={InputType.NAME}>{InputPlaceholders.NAME}</Label>
           <Input
             type={InputType.NAME}
@@ -61,8 +67,6 @@ const ContactForm: React.FC = () => (
             placeholder="..."
             error={errors.message}
           />
-          <Field type="hidden" name="bot-field" />
-          <Field type="hidden" name="form-name" />
 
           <Button type="submit" disabled={isSubmitting}>
             Submit
