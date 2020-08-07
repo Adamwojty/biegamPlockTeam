@@ -3,7 +3,7 @@ import { FluidObject } from "gatsby-image"
 import { graphql, PageProps } from "gatsby"
 import styled from "styled-components"
 import Competition from "../components/Competition/Competition"
-import SEO from "../components/seo"
+import SEO from "../components/SeoComponent"
 
 const Wrapper = styled.main`
   margin-top: 50px;
@@ -47,7 +47,7 @@ interface CompetitionsInterface {
 }
 const Competitions: React.FC<PageProps<CompetitionsInterface>> = ({ data }) => (
   <>
-    <SEO title="Competitions" />
+    <SEO title="Zawody" />
     <Wrapper>
       <h1>Zbliżające się zawody:</h1>
       {data.allDatoCmsCompetition.nodes.map(item => (

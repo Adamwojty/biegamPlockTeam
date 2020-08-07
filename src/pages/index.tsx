@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { graphql, PageProps } from "gatsby"
-import SEO from "../components/seo"
+import SEO from "../components/SeoComponent"
 import AboutPreview from "../components/PagePreviews/AboutPreview/AboutPreview"
 import HeroSection from "../components/PagePreviews/HeroSection/HeroSection"
 import { Media } from "../assets/styles/const"
@@ -19,7 +19,7 @@ interface IndexPageInterface {
 
 const IndexPage: React.FC<PageProps<IndexPageInterface>> = () => (
   <>
-    <SEO title="Home" />
+    <SEO title="BiegamPlockTeam" />
     <Wrapper>
       <HeroSection />
       <AboutPreview />

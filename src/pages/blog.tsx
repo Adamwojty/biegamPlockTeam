@@ -3,7 +3,7 @@ import { graphql, PageProps } from "gatsby"
 import slugify from "slugify"
 import { FluidObject } from "gatsby-image"
 import styled from "styled-components"
-import SEO from "../components/seo"
+import SEO from "../components/SeoComponent"
 import ArticlePreview from "../components/PagePreviews/ArticlePreview/ArticlePreview"
 import { Media } from "../assets/styles/const"
 

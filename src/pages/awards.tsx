@@ -1,10 +1,10 @@
 import React from "react"
 
-import SEO from "../components/seo"
+import SEO from "../components/SeoComponent"
 
 const Awards: React.FC = () => (
   <>
-    <SEO title="Awards" />
+    <SEO title="Osiągnięcia" />
     <h1>Osiągnięcia</h1>
     <table>
       <thead>
