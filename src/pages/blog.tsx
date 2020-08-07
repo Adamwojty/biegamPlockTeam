@@ -15,6 +15,8 @@ const Wrapper = styled.main`
   justify-content: center;
   @media ${Media.TABLET} {
     justify-content: start;
+    grid-template-columns: repeat(auto-fill, 400px);
+    grid-gap: 30px;
   }
 `
 

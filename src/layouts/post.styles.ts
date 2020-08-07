@@ -7,8 +7,8 @@ export const Wrapper = styled.article`
   display: flex;
   flex-direction: column;
 `
-export const StyledImage = styled(Image)`
-  margin: 0 auto 30px auto;
+export const Img = styled.img`
+  margin: 30px auto 30px auto;
   width: 280px;
   @media ${Media.MOBILE_L} {
     width: 500px;

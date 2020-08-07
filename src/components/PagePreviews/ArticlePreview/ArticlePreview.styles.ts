@@ -1,11 +1,16 @@
 import Image from "gatsby-image"
 import styled from "styled-components"
-import { Colors, FontSize } from "../../../assets/styles/const"
+import { Colors, FontSize, Media } from "../../../assets/styles/const"
 
 export const Wrapper = styled.article`
   position: relative;
   width: 280px;
   margin: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  @media ${Media.TABLET} {
+    width: 400px;
+  }
   a {
     color: ${Colors.WHITE};
   }
@@ -23,7 +28,14 @@ export const ContentWrapper = styled.section`
   padding: 5px;
   background-color: ${Colors.BLUE};
   height: 100px;
+  @media ${Media.TABLET} {
+    height: 150px;
+    padding: 15px;
+  }
 `
 export const Img = styled(Image)`
   height: 190px;
+  @media ${Media.TABLET} {
+    height: 220px;
+  }
 `

@@ -5,7 +5,7 @@ import Slider from "../components/Slider/Slider"
 import Picutre from "../components/Picture/Picture"
 import {
   Wrapper,
-  StyledImage,
+  Img,
   Title,
   Author,
   Header,
@@ -97,8 +97,9 @@ const PostLayout: React.FC<PageProps<PostInterface>> = ({ data }) => {
         </Author>
         {data.datoCmsArticle.gallery.length > 1 ? (
           <Slider data={data.datoCmsArticle.gallery} />
-        ) : // <StyledImage fluid={data.datoCmsArticle.featuredImage.fluid} />
-        null}
+        ) : (
+          <Img src={data.datoCmsArticle.featuredImage.fluid.src} />
+        )}
         <div>
           {data.datoCmsArticle.articleContent.map(item => {
             return handleRenderComponents(item)
