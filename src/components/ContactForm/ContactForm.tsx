@@ -1,19 +1,29 @@
 import React from "react"
 import { Formik, Field } from "formik"
-import { InputName, InputType, InputPlaceholders } from "./ContactForm.types"
+import { InputName, InputType, InputLabels } from "./ContactForm.types"
 import {
   Input,
   FormWrapper,
   TextInput,
   Label,
   Button,
+  Header,
+  LabelWrapper,
+  ErrorMsg,
 } from "./ContactForm.styles"
 import { validateSchema } from "./actions/validateSchema"
 import { encode } from "./actions/encode"
 import { postMsg } from "./actions/postMsg"
 
 const ContactForm: React.FC = () => (
-  <>
+  <section>
+    <Header>
+      <h2>
+        Masz jakieś pytania? Checsz do nas dołączyć lub umówić się na wspólny
+        trening?
+      </h2>
+      <h3>Napisz do nas!</h3>
+    </Header>
     <Formik
       initialValues={{
         name: "",
@@ -24,28 +34,15 @@ const ContactForm: React.FC = () => (
       validateOnChange={false}
       validateOnBlur={false}
       onSubmit={(values, { setSubmitting }) => {
-        // fetch("/", {
-        //   method: "POST",
-        //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        //   body: encode({
-        //     "form-name": "contact",
-        //     ...values,
-        //   }),
-        // })
         postMsg(
           encode({
             "form-name": "contact",
             ...values,
           })
         )
-        // .then(() => {
-        //   alert("Success!")
-        //   setSubmitting(false)
-        // })
-        // .catch(error => {
-        //   alert("Error: Please Try Again!")
-        //   setSubmitting(false)
-        // })
+        setTimeout(() => {
+          setSubmitting(false)
+        }, 400)
       }}
     >
       {({ errors, isSubmitting }) => (
@@ -56,25 +53,34 @@ const ContactForm: React.FC = () => (
         >
           <Field type="hidden" name="bot-field" />
           <Field type="hidden" name="form-name" value="contact-form" />
-          <Label htmlFor={InputType.NAME}>{InputPlaceholders.NAME}</Label>
+          <LabelWrapper>
+            <Label htmlFor={InputType.NAME}>{InputLabels.NAME}</Label>
+            <ErrorMsg>{errors.name}</ErrorMsg>
+          </LabelWrapper>
           <Input
             type={InputType.NAME}
             name={InputName.NAME}
             error={errors.name}
           />
-          <Label htmlFor={InputType.EMAIL}>{InputPlaceholders.EMAIL}</Label>
+          <LabelWrapper>
+            <Label htmlFor={InputType.EMAIL}>{InputLabels.EMAIL}</Label>
+            <ErrorMsg>{errors.email}</ErrorMsg>
+          </LabelWrapper>
           <Input
             type={InputType.EMAIL}
             name={InputName.EMAIL}
             error={errors.email}
           />
-          <Label htmlFor={InputType.MESSAGE}>{InputPlaceholders.MESSAGE}</Label>
+          <LabelWrapper>
+            <Label htmlFor={InputType.MESSAGE}>{InputLabels.MESSAGE}</Label>
+            <ErrorMsg>{errors.message}</ErrorMsg>
+          </LabelWrapper>
           <TextInput
             type={InputType.MESSAGE}
             name={InputName.MESSAGE}
             component={InputType.MESSAGE}
-            placeholder="..."
             error={errors.message}
+            placeholder="..."
           />
 
           <Button type="submit" disabled={isSubmitting}>
@@ -83,7 +89,7 @@ const ContactForm: React.FC = () => (
         </FormWrapper>
       )}
     </Formik>
-  </>
+  </section>
 )
 
 export default ContactForm

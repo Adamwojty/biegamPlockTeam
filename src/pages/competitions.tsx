@@ -6,7 +6,6 @@ import Competition from "../components/Competition/Competition"
 import SEO from "../components/SeoComponent"
 
 const Wrapper = styled.main`
-  margin-top: 50px;
   display: flex;
   flex-direction: column;
 `

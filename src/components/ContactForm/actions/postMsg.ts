@@ -1,9 +1,8 @@
 import { postMessage } from "../../../config/axios/service/postMessage"
 
-export const postMsg = async obj => {
+export const postMsg = async (obj: string) => {
   try {
     await postMessage(obj)
-    await console.log("sucess")
   } catch (err) {
     console.log(err)
   }

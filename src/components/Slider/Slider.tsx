@@ -14,26 +14,16 @@ interface SliderInterface {
 
 const Slider: React.FC<SliderInterface> = ({ data }) => {
   const slide = useChangeSlide(data)
-  const length = data.length
-  console.log(slide.activeImg)
   return (
-    <>
-      <Wrapper>
-        <ArrowBackwards onClick={slide.handleImageChangeForward} />
-        <ArrowForward onClick={slide.handleImageChangBackwards} />
-        <ImageWrapper length={data.length} active={slide.activeImg}>
-          {data.map(item => (
-            <Img
-              src={item.fluid.src}
-              key={item.fluid.src}
-              length={data.length}
-            />
-          ))}
-
-          {/* <Image fluid={data[`${slide.activeImg}`].fluid} /> */}
-        </ImageWrapper>
-      </Wrapper>
-    </>
+    <Wrapper>
+      <ArrowBackwards onClick={slide.handleImageChangeForward} />
+      <ArrowForward onClick={slide.handleImageChangBackwards} />
+      <ImageWrapper length={data.length} active={slide.activeImg}>
+        {data.map(item => (
+          <Img src={item.fluid.src} key={item.fluid.src} length={data.length} />
+        ))}
+      </ImageWrapper>
+    </Wrapper>
   )
 }
 export default Slider

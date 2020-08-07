@@ -29,7 +29,7 @@ const AboutPreview: React.FC = () => {
       title: "Dowiedz się, gdzie możesz nas spotkać",
       action: "zawody",
       path: Routes.COMPETITIONS,
-      iconURL: data.allFile.nodes[0].publicURL,
+      iconURL: data.allFile.nodes[2].publicURL,
     },
     {
       title: "Odwiedź naszego bloga i poczytaj o poczynaniach naszej drużyny",
@@ -41,7 +41,7 @@ const AboutPreview: React.FC = () => {
       title: "Chcesz do nas dołączyć? Masz pytanie? Napisz maila!",
       action: "kontakt",
       path: Routes.CONTACT,
-      iconURL: data.allFile.nodes[2].publicURL,
+      iconURL: data.allFile.nodes[0].publicURL,
     },
   ]
   return (

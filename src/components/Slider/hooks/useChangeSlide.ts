@@ -12,5 +12,9 @@ export const useChangeSlide = (data: { fluid: { src: string } }[]) => {
       return setActiveImg(data.length - 1)
     } else return setActiveImg(activeImg - 1)
   }
-  return { activeImg, handleImageChangeForward, handleImageChangBackwards }
+  return {
+    activeImg,
+    handleImageChangeForward,
+    handleImageChangBackwards,
+  }
 }

@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: flex-end;
+
   @media ${Media.MOBILE_L} {
     height: 300px;
   }
@@ -25,9 +26,13 @@ export const ImageWrapper = styled.div<{ length: number; active: number }>`
   height: 100%;
   flex-shrink: 0;
   transition: 0.5s ease-in-out;
+  margin: auto 0;
   width: ${({ length }) => `calc(100% * ${length})`};
   transform: ${({ active, length }) =>
-    `translateX(calc((100% / ${length})* ${active}))`};
+    `translateX(calc((100% / ${length}) * ${active}))`};
+  @media ${Media.MOBILE_L} {
+    height: 80%;
+  }
 `
 export const Img = styled.div<{ src: string; length: number }>`
   background-image: ${({ src }) => `url('${src}')`};
@@ -54,19 +59,19 @@ export const ArrowForward = styled(Arrow)`
   right: 10px;
   transform: rotate(45deg);
   @media ${Media.MOBILE_L} {
-    right: 30px;
+    right: 10px;
   }
   @media ${Media.TABLET} {
-    right: 10px;
+    right: 30px;
   }
 `
 export const ArrowBackwards = styled(Arrow)`
   left: 10px;
   transform: rotate(-135deg);
   @media ${Media.MOBILE_L} {
-    left: 30px;
+    left: 10px;
   }
   @media ${Media.TABLET} {
-    left: 10px;
+    left: 30px;
   }
 `
