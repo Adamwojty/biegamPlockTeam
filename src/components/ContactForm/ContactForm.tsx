@@ -1,5 +1,5 @@
 import React from "react"
-import { Formik } from "formik"
+import { Formik, Field } from "formik"
 import { InputName, InputType, InputPlaceholders } from "./ContactForm.types"
 import {
   Input,
@@ -9,26 +9,39 @@ import {
   Button,
 } from "./ContactForm.styles"
 import { validateSchema } from "./actions/validateSchema"
+import { encode } from "./actions/encode"
+import { postMsg } from "../../config/axios/service/postMessage"
+
 const ContactForm: React.FC = () => (
   <>
     <Formik
-      initialValues={{ name: "", email: "", message: "" }}
+      initialValues={{
+        name: "",
+        email: "",
+        message: "",
+        "bot-field": "",
+        "form-name": "contact",
+      }}
       validationSchema={validateSchema}
       validateOnChange={false}
       validateOnBlur={false}
       onSubmit={(values, { setSubmitting }) => {
+        postMsg({
+          body: encode({
+            "form-name": "contact-form",
+            ...values,
+          }),
+        })
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2))
           setSubmitting(false)
         }, 400)
       }}
     >
       {({ errors, isSubmitting }) => (
         <FormWrapper
-          name="contact"
-          method="POST"
           data-netlify="true"
-          netlify-honeypot="bot-field"
+          name="contact-form"
+          data-netliy-honeypot="bot-field"
         >
           <Label htmlFor={InputType.NAME}>{InputPlaceholders.NAME}</Label>
           <Input
@@ -50,6 +63,8 @@ const ContactForm: React.FC = () => (
             placeholder="..."
             error={errors.message}
           />
+          <Field type="hidden" name="bot-field" />
+          <Field type="hidden" name="form-name" />
 
           <Button type="submit" disabled={isSubmitting}>
             Submit
