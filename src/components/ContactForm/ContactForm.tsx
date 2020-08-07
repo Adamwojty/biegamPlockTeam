@@ -10,7 +10,7 @@ import {
 } from "./ContactForm.styles"
 import { validateSchema } from "./actions/validateSchema"
 import { encode } from "./actions/encode"
-import { postMsg } from "../../config/axios/service/postMessage"
+import { postMsg } from "./actions/postMsg"
 
 const ContactForm: React.FC = () => (
   <>
@@ -19,19 +19,17 @@ const ContactForm: React.FC = () => (
         name: "",
         email: "",
         message: "",
-        "bot-field": "",
-        "form-name": "contact",
       }}
       validationSchema={validateSchema}
       validateOnChange={false}
       validateOnBlur={false}
       onSubmit={(values, { setSubmitting }) => {
-        postMsg({
-          body: encode({
+        postMsg(
+          encode({
             "form-name": "contact-form",
             ...values,
-          }),
-        })
+          })
+        )
         setTimeout(() => {
           setSubmitting(false)
         }, 400)
