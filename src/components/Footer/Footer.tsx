@@ -22,9 +22,7 @@ const Footer: React.FC = () => (
             <ListItem>
               <Link to={Routes.COMPETITIONS}>zawody</Link>
             </ListItem>
-            <ListItem>
-              <Link to={Routes.AWARDS}>osiągnięcia</Link>
-            </ListItem>
+
             <ListItem>
               <Link to={Routes.BLOG}>blog</Link>
             </ListItem>
@@ -65,7 +63,7 @@ const Footer: React.FC = () => (
               </a>
             </ListItem>
             <ListItem>
-              <a href="/" target="blank">
+              <a href="https://www.endomondo.com/" target="blank">
                 endomondo
               </a>
             </ListItem>

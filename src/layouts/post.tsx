@@ -1,7 +1,7 @@
 import React from "react"
 import { FluidObject } from "gatsby-image"
 import { graphql, PageProps } from "gatsby"
-import Slider from "../components/Slider/Slider"
+import Slider from "../components/BlogPage/Slider/Slider"
 import Picutre from "../components/Picture/Picture"
 import {
   Wrapper,
@@ -13,6 +13,28 @@ import {
   BackLink,
 } from "./post.styles"
 
+interface PictureInterface {
+  title: string
+  fluid: FluidObject
+}
+interface ArticleContentInterface {
+  id: string
+  heading?: string
+  description?: string
+  picture?: PictureInterface
+}
+interface PostInterface {
+  datoCmsArticle: {
+    author: string
+    title: string
+    date: string
+    gallery: { fluid: { src: string } }[]
+    featuredImage: {
+      fluid: FluidObject
+    }
+    articleContent: ArticleContentInterface[]
+  }
+}
 export const query = graphql`
   query querySingleArticle($id: String!) {
     datoCmsArticle(id: { eq: $id }) {
@@ -51,28 +73,6 @@ export const query = graphql`
     }
   }
 `
-interface PictureInterface {
-  title: string
-  fluid: FluidObject
-}
-interface ArticleContentInterface {
-  id: string
-  heading?: string
-  description?: string
-  picture?: PictureInterface
-}
-interface PostInterface {
-  datoCmsArticle: {
-    author: string
-    title: string
-    date: string
-    gallery: { fluid: { src: string } }[]
-    featuredImage: {
-      fluid: FluidObject
-    }
-    articleContent: ArticleContentInterface[]
-  }
-}
 
 const PostLayout: React.FC<PageProps<PostInterface>> = ({ data }) => {
   const handleRenderComponents = (item: ArticleContentInterface) => {

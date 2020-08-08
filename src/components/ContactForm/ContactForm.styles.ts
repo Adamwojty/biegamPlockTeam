@@ -6,7 +6,7 @@ export const FormWrapper = styled(Form)`
   display: flex;
   flex-direction: column;
   max-width: 300px;
-  /* min-height: 80vh; */
+  margin-bottom: 30px;
   @media ${Media.MOBILE_L} {
     max-width: 500px;
   }

@@ -13,6 +13,7 @@ export enum FontSize {
   TEXT_BIG = "24px",
   TEXT_NORMAL = "18px",
   TEXT_SMALL = "14px",
+  TEXT_XSMALL = "10px",
 }
 export enum Colors {
   BLUE = "rgba(9, 60, 161, 1)",

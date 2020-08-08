@@ -6,7 +6,6 @@ export const Wrapper = styled.section`
   margin: 30px 0;
   display: flex;
   flex-direction: column;
-
   @media ${Media.TABLET} {
     flex-direction: row;
     margin: 30px 0;
@@ -15,7 +14,6 @@ export const Wrapper = styled.section`
 export const ContentWrapper = styled.article`
   display: flex;
   flex-direction: column;
-
   h2 {
     margin: 10px 0 0;
   }
@@ -43,5 +41,7 @@ export const Img = styled(Image)`
   margin: 0 auto;
   @media ${Media.TABLET} {
     margin: 0 30px 0 0;
+    height: 250px;
+    width: 250px;
   }
 `

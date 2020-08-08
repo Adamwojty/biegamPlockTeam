@@ -8,7 +8,6 @@ interface PostInterface {
   date: string
   slug: string
   featuredImage: {
-    alt: string
     fluid: FluidObject
   }
 }
@@ -20,7 +19,7 @@ const ArticlePreview: React.FC<PostInterface> = ({
   featuredImage,
 }) => (
   <Wrapper>
-    <Link to={slug}>
+    <Link to={`/blog/${slug}`}>
       <Img fluid={featuredImage.fluid} />
       <ContentWrapper>
         <h2>{title}</h2>

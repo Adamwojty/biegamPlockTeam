@@ -32,6 +32,7 @@ export const Logo = styled(Link)`
   margin: auto 20px;
   z-index: 3;
   font-weight: ${FontWeight.BOLD};
+
   img {
     height: 50px;
     margin: auto 0;

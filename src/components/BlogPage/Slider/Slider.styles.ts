@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Media, Colors } from "../../assets/styles/const"
+import { Media, Colors } from "../../../assets/styles/const"
 
 export const Wrapper = styled.div`
   margin: 30px auto;
