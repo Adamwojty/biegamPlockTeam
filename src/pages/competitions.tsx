@@ -8,6 +8,7 @@ import SEO from "../components/SeoComponent"
 const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 `
 
 export const query = graphql`

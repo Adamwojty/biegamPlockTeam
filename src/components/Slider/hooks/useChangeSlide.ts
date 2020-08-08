@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export const useChangeSlide = (data: { fluid: { src: string } }[]) => {
-  const [activeImg, setActiveImg] = useState<number>(0)
+  const [activeImg, setActiveImg] = useState<number>(data.length - 1)
   const handleImageChangeForward = () => {
     if (activeImg === data.length - 1) {
       return setActiveImg(0)

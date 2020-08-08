@@ -13,6 +13,7 @@ const Wrapper = styled.main`
   grid-template-columns: repeat(auto-fill, 300px);
   grid-gap: 10px;
   justify-content: center;
+  min-height: 100vh;
   @media ${Media.TABLET} {
     justify-content: start;
     grid-template-columns: repeat(auto-fill, 400px);

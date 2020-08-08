@@ -20,6 +20,7 @@ export enum Colors {
   BLACK = "rgba(0,0,0,1)",
   LIGHT_GREY = "rgb(248,248,248)",
   ORANGE = "rgba(222, 93, 54, 1)",
+  DARK_GREY = "rgba(17, 17, 17,1)",
 }
 export enum Media {
   MOBILE_L = "(min-width: 600px)",

@@ -6,7 +6,7 @@ export const FormWrapper = styled(Form)`
   display: flex;
   flex-direction: column;
   max-width: 300px;
-
+  /* min-height: 80vh; */
   @media ${Media.MOBILE_L} {
     max-width: 500px;
   }
@@ -61,10 +61,8 @@ export const LabelWrapper = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
-  p {
-    margin: auto 0;
-  }
 `
 export const ErrorMsg = styled.p`
+  margin: auto 0;
   font-size: ${FontSize.TEXT_SMALL};
 `
