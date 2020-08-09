@@ -32,7 +32,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
   //CREATE BLOG LIST
   const posts = result.data.allDatoCmsArticle.nodes
-  const postsPerPage = 4
+  const postsPerPage = 1
   const numPages = Math.ceil(posts.length / postsPerPage)
 
   Array.from({ length: numPages }).forEach((_, i) => {
