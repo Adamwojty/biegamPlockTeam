@@ -16,6 +16,7 @@ export const ContentWrapper = styled.article`
   flex-direction: column;
   h2 {
     margin: 10px 0 0;
+    z-index: 2;
   }
 `
 export const CompetitionLink = styled.a`
@@ -25,7 +26,7 @@ export const CompetitionLink = styled.a`
   font-size: ${FontSize.TEXT_NORMAL};
   padding: 14px 0;
   width: 200px;
-  max-height: 50px;
+  /* max-height: 50px; */
   text-align: center;
   background-color: ${Colors.BLUE};
   color: ${Colors.WHITE};
@@ -35,13 +36,11 @@ export const Date = styled.p`
   margin: 5px 0;
 `
 export const Img = styled(Image)`
-  border-radius: 50%;
-  height: 150px;
-  width: 150px;
+  border-radius: 20px;
+  height: 250px;
+  width: 250px;
   margin: 0 auto;
   @media ${Media.TABLET} {
     margin: 0 30px 0 0;
-    height: 250px;
-    width: 250px;
   }
 `
