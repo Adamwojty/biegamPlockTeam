@@ -1,13 +1,11 @@
 import React from "react"
-
 import SEO from "../components/SeoComponent"
+import About from "../components/AboutPage/About/About"
 
-const IndexPage = () => (
+const IndexPage: React.FC = () => (
   <>
     <SEO title="O nas" />
-    <h1>About</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <About />
   </>
 )
 

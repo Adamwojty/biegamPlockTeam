@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { FluidObject } from "gatsby-image"
-import { Routes } from "../../config/routes"
+import { Routes } from "../../../../config/routes"
 import {
   Wrapper,
   ImgWrapper,

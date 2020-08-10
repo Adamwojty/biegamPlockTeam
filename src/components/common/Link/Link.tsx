@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { FontWeight, FontSize } from "../../assets/styles/const"
+import { FontWeight, FontSize } from "../../../assets/styles/const"
 
 const StyledLink = styled(Link)`
   border-radius: 10px;

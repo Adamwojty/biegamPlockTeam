@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Image from "gatsby-image"
 import { Media, FontSize, Colors } from "../assets/styles/const"
-import StyledLink from "../components/Link/Link"
+import StyledLink from "../components/common/Link/Link"
 export const Wrapper = styled.article`
   margin: 20px 0 100px;
   display: flex;

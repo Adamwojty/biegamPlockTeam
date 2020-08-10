@@ -1,8 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { FluidObject } from "gatsby-image"
-import { Routes } from "../../../config/routes"
-import facebook from "../../../assets/images/facebook.png"
+import { Routes } from "../../config/routes"
+import facebook from "../../assets/images/facebook.png"
 import {
   Wrapper,
   ImgWrapper,

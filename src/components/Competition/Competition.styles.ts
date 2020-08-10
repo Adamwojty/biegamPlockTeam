@@ -26,7 +26,6 @@ export const CompetitionLink = styled.a`
   font-size: ${FontSize.TEXT_NORMAL};
   padding: 14px 0;
   width: 200px;
-  /* max-height: 50px; */
   text-align: center;
   background-color: ${Colors.BLUE};
   color: ${Colors.WHITE};

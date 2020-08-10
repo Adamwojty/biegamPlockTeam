@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Image from "gatsby-image"
-import { Colors, FontSize, Media } from "../../assets/styles/const"
-import StyledLink from "../Link/Link"
+import { Colors, FontSize, Media } from "../../../../assets/styles/const"
+import StyledLink from "../../../common/Link/Link"
 export const Wrapper = styled.div`
   color: ${Colors.WHITE};
   padding: 20px;

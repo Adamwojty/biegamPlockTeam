@@ -21,7 +21,7 @@ export const query = graphql`
         date
         featuredImage {
           alt
-          fluid(maxWidth: 150, maxHeight: 150) {
+          fluid(maxWidth: 250, maxHeight: 250) {
             ...GatsbyDatoCmsFluid_tracedSVG
           }
         }

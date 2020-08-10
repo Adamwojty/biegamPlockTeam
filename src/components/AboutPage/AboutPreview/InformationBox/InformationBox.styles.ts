@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { Colors, FontWeight, Media } from "../../assets/styles/const"
-import StyledLink from "../Link/Link"
+import { Colors, FontWeight, Media } from "../../../../assets/styles/const"
+import StyledLink from "../../../common/Link/Link"
 
 export const Wrapper = styled.article`
   position: relative;

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Image from "gatsby-image"
-import StyledLink from "../../Link/Link"
-import { Colors, FontSize, Media } from "../../../assets/styles/const"
+import StyledLink from "../common/Link/Link"
+import { Colors, FontSize, Media } from "../../assets/styles/const"
 
 export const Wrapper = styled.section`
   z-index: 2;
