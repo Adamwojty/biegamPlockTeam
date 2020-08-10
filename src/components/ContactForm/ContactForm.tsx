@@ -39,14 +39,6 @@ const ContactForm: React.FC = () => (
           ...values,
         })
         postMsg(body)
-        // fetch("/", {
-        //   method: "POST",
-        //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        //   body: encode({
-        //     "form-name": "contact-form",
-        //     ...values,
-        //   }),
-        // })
         setTimeout(() => {
           setSubmitting(false)
         }, 400)
@@ -58,8 +50,6 @@ const ContactForm: React.FC = () => (
           name="contact-form"
           data-netliy-honeypot="bot-field"
         >
-          <Field type="hidden" name="bot-field" />
-          <Field type="hidden" name="form-name" value="contact-form" />
           <LabelWrapper>
             <Label htmlFor={InputType.NAME}>{InputLabels.NAME}</Label>
             <ErrorMsg>{errors.name}</ErrorMsg>
@@ -93,6 +83,8 @@ const ContactForm: React.FC = () => (
           <Button type="submit" disabled={isSubmitting}>
             Submit
           </Button>
+          {/* <Field type="hidden" name="bot-field" /> */}
+          <Field type="hidden" name="form-name" value="contact-form" />
         </FormWrapper>
       )}
     </Formik>
