@@ -11,6 +11,6 @@ export const Desc = styled.p`
 export const Img = styled(Image)`
   margin: 0 auto;
   min-height: 150px;
-  max-height: 800px;
+  max-height: 650px;
   max-width: 70%;
 `

@@ -7,7 +7,7 @@ const query = graphql`
   query querryImg {
     file(name: { eq: "about" }) {
       childImageSharp {
-        fluid(maxWidth: 600, quality: 100) {
+        fluid(maxWidth: 800, quality: 100) {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }

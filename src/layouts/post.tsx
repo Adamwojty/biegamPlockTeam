@@ -42,7 +42,7 @@ export const query = graphql`
       title
       date(formatString: "D.M.Y")
       featuredImage {
-        fluid(maxWidth: 700, maxHeight: 700) {
+        fluid(maxWidth: 1000, maxHeight: 1000) {
           ...GatsbyDatoCmsFluid_tracedSVG
         }
       }
@@ -59,7 +59,7 @@ export const query = graphql`
           id
           picture {
             title
-            fluid(maxWidth: 700, maxHeight: 700) {
+            fluid(maxWidth: 1500, maxHeight: 1500) {
               ...GatsbyDatoCmsFluid_tracedSVG
             }
           }

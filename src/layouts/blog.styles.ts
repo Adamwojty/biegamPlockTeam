@@ -6,6 +6,7 @@ export const Wrapper = styled.main`
   display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
   grid-gap: 10px;
+  min-height: 70vh;
   justify-content: center;
 
   @media ${Media.TABLET} {

@@ -42,6 +42,11 @@ export const ImgWrapper = styled.div`
   position: relative;
   border-radius: 20px;
   margin: 0 auto;
+
+  @media ${Media.MOBILE_L} {
+    width: 60%;
+  }
+
   @media ${Media.TABLET} {
     width: 300px;
     height: 300px;
