@@ -34,20 +34,19 @@ const ContactForm: React.FC = () => (
       validateOnChange={false}
       validateOnBlur={false}
       onSubmit={(values, { setSubmitting }) => {
-        // postMsg(
-        //   encode({
+        const body = encode({
+          "form-name": "contact-form",
+          ...values,
+        })
+        postMsg(body)
+        // fetch("/", {
+        //   method: "POST",
+        //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        //   body: encode({
         //     "form-name": "contact-form",
         //     ...values,
-        //   })
-        // )
-        fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({
-            "form-name": "contact-form",
-            ...values,
-          }),
-        })
+        //   }),
+        // })
         setTimeout(() => {
           setSubmitting(false)
         }, 400)
@@ -55,7 +54,7 @@ const ContactForm: React.FC = () => (
     >
       {({ errors, isSubmitting }) => (
         <FormWrapper
-          data-netlify="true"
+          data-netlify={true}
           name="contact-form"
           data-netliy-honeypot="bot-field"
         >
