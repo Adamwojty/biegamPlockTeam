@@ -83,7 +83,7 @@ const ContactForm: React.FC = () => (
           <Button type="submit" disabled={isSubmitting}>
             Submit
           </Button>
-          {/* <Field type="hidden" name="bot-field" /> */}
+
           <Field type="hidden" name="form-name" value="contact-form" />
         </FormWrapper>
       )}

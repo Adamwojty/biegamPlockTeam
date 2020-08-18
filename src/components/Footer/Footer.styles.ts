@@ -16,6 +16,7 @@ export const Wrapper = styled.footer`
 export const ListsWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
   @media ${Media.MOBILE_L} {
     flex-direction: row;
     flex-wrap: wrap;
@@ -36,15 +37,14 @@ export const ListHeader = styled.h3`
 `
 export const List = styled.ul`
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
   @media ${Media.MOBILE_L} {
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
 `
 export const ListItem = styled.li`
-  margin: 5px 10px 5px 0;
+  margin: 10px 10px 5px 0;
   font-size: ${FontSize.TEXT_XSMALL};
   @media ${Media.MOBILE_L} {
     margin: 5px 0;

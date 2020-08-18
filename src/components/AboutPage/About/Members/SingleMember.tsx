@@ -21,7 +21,7 @@ const SingleMember: React.FC<MemberInterface> = ({
 }) => {
   return (
     <Wrapper>
-      <Img src={featuredImage.fluid.src} />
+      <Img src={featuredImage.fluid.src} alt={name} />
       <Title>{name}</Title>
       <SubTitle>{role}</SubTitle>
       <Profile href={profileLink} target="blank" rel="noreferrer noopener">

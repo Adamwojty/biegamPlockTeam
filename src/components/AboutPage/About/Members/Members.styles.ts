@@ -7,5 +7,10 @@ export const Wrapper = styled.section`
   justify-content: center;
   @media ${Media.MOBILE_L} {
     justify-content: flex-start;
+    grid-template-columns: repeat(auto-fill, 250px);
+  }
+  @media ${Media.TABLET} {
+    justify-content: flex-start;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 350px));
   }
 `

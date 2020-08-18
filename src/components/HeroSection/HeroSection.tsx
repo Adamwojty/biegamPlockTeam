@@ -49,7 +49,7 @@ const HeroSection: React.FC = () => {
       </ImgWrapper>
       <ContentWrapper>
         <h1>Drużyna biegowa</h1>
-        <h2>biegamPłock Team</h2>
+        <h2>biegamPłock team</h2>
         <ContactLink to={Routes.CONTACT}>Dołącz do nas</ContactLink>
       </ContentWrapper>
     </Wrapper>

@@ -35,18 +35,30 @@ const Footer: React.FC = () => (
           <ListHeader>sponsorzy:</ListHeader>
           <List>
             <ListItem>
-              <a href="/" target="blank">
-                Sponsor 1
+              <a
+                href="http://www.jmelectric.pl/"
+                target="blank"
+                rel="noopener norefferer"
+              >
+                J&M Electric
               </a>
             </ListItem>
             <ListItem>
-              <a href="/" target="blank">
-                Sponsor 1
+              <a
+                href="https://www.pik.plo.pl/"
+                target="blank"
+                rel="noopener norefferer"
+              >
+                pik - Materiały Budowlane
               </a>
             </ListItem>
             <ListItem>
-              <a href="/" target="blank">
-                Sponsor 1
+              <a
+                href="https://www.mechanikazdrowia.com/?fbclid=IwAR1cLndy9IA9foZSVjIrEz9Q4JKKYv1jbc_AjOPjbYcRJ__nCH_2a1KziT0"
+                target="blank"
+                rel="noopener norefferer"
+              >
+                Mechanika Zdrowia
               </a>
             </ListItem>
           </List>
@@ -60,11 +72,6 @@ const Footer: React.FC = () => (
                 target="blank"
               >
                 facebook
-              </a>
-            </ListItem>
-            <ListItem>
-              <a href="https://www.endomondo.com/" target="blank">
-                endomondo
               </a>
             </ListItem>
           </List>
