@@ -1,5 +1,12 @@
 import React from "react"
-import { Wrapper, Img, Title, SubTitle, Profile } from "./SingleMember.styles"
+import {
+  Wrapper,
+  Img,
+  Title,
+  SubTitle,
+  Profile,
+  Date,
+} from "./SingleMember.styles"
 
 interface MemberInterface {
   featuredImage: {
@@ -11,6 +18,7 @@ interface MemberInterface {
   name: string
   profileLink: string
   role: string
+  joinData: string
 }
 
 const SingleMember: React.FC<MemberInterface> = ({
@@ -18,11 +26,13 @@ const SingleMember: React.FC<MemberInterface> = ({
   profileLink,
   featuredImage,
   role,
+  joinData,
 }) => {
   return (
     <Wrapper>
       <Img src={featuredImage.fluid.src} alt={name} />
       <Title>{name}</Title>
+      <Date>W drużynie od: {joinData}</Date>
       <SubTitle>{role}</SubTitle>
       <Profile href={profileLink} target="blank" rel="noreferrer noopener">
         Profil facebook
