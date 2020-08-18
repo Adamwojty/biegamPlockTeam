@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   padding: 20px 0;
   width: calc(100% + 40px);
   display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-columns: repeat(auto-fill, 260px);
   grid-gap: 20px;
   justify-content: space-around;
   @media ${Media.TABLET} {
