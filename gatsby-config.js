@@ -1,6 +1,7 @@
 require("dotenv").config()
 module.exports = {
   siteMetadata: {
+    lang: `pl`,
     title: `biegamPlock Team `,
     description: `Website of biegamPlock team. Team based in Plock, Poland`,
     author: `adam wojtycki`,
@@ -31,6 +32,14 @@ module.exports = {
             },
           ],
         },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-page-progress",
+      options: {
+        height: 5,
+        prependToBody: false,
+        color: `rgba(9, 60, 161, 1)`,
       },
     },
     {

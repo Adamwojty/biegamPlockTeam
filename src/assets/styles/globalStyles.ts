@@ -1,8 +1,9 @@
 import { createGlobalStyle } from "styled-components"
-import { Media } from "./const"
+import { Media, FontSize } from "./const"
 const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
   }
   *,
   *::before,
@@ -26,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat';
   }
   p {
-    font-size: 16px;
+    font-size: ${FontSize.TEXT_NORMAL};
   }
   ul {
     padding: 0;

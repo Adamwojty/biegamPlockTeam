@@ -4,7 +4,7 @@ import { Routes } from "../../../config/routes"
 import InformationBox from "./InformationBox/InformationBox"
 import AboutBox from "./AboutBox/AboutBox"
 import { Wrapper, InformationWrapper } from "./AboutPreview.styles"
-
+import Sponsors from "../../Sponsors/Sponsors"
 const query = graphql`
   {
     allFile(filter: { absolutePath: { regex: "/svg/" } }) {
@@ -51,6 +51,7 @@ const AboutPreview: React.FC = () => {
           <InformationBox {...item} key={item.action} />
         ))}
       </InformationWrapper>
+      <Sponsors />
       <AboutBox />
     </Wrapper>
   )

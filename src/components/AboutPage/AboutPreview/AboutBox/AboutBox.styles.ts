@@ -4,21 +4,14 @@ import { Colors, FontSize, Media } from "../../../../assets/styles/const"
 import StyledLink from "../../../common/Link/Link"
 export const Wrapper = styled.div`
   color: ${Colors.WHITE};
-  padding: 20px;
   overflow: hidden;
   h2 {
-    font-size: ${FontSize.HEADER_BIG};
+    font-size: ${FontSize.HEADER_SMALLBIG};
     margin-bottom: 10px;
   }
   h3 {
     margin-bottom: 0;
     font-size: ${FontSize.HEADER_NORMAL};
-    @media ${Media.TABLET} {
-      font-size: ${FontSize.HEADER_SMALLBIG};
-    }
-  }
-  @media ${Media.TABLET} {
-    padding-bottom: 100px;
   }
 `
 export const ContentWrapper = styled.div`

@@ -2,6 +2,21 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import SingleMember from "./SingleMember"
 import { Wrapper } from "./Members.styles"
+
+const Members: React.FC = () => {
+  const data = useStaticQuery<MemberQuery>(query)
+
+  return (
+    <>
+      <h3>Nasi zawodnicy:</h3>
+      <Wrapper>
+        {data.allDatoCmsMember.nodes.map(member => (
+          <SingleMember {...member} key={member.id} />
+        ))}
+      </Wrapper>
+    </>
+  )
+}
 const query = graphql`
   query queryTeamMembers {
     allDatoCmsMember {
@@ -15,6 +30,7 @@ const query = graphql`
         name
         profileLink
         role
+        joinData
       }
     }
   }
@@ -31,21 +47,8 @@ interface MemberQuery {
       name: string
       profileLink: string
       role: string
+      joinData: string
     }[]
   }
-}
-
-const Members: React.FC = () => {
-  const data = useStaticQuery<MemberQuery>(query)
-  return (
-    <>
-      <h3>Nasi zawodnicy:</h3>
-      <Wrapper>
-        {data.allDatoCmsMember.nodes.map(member => (
-          <SingleMember {...member} key={member.id} />
-        ))}
-      </Wrapper>
-    </>
-  )
 }
 export default Members

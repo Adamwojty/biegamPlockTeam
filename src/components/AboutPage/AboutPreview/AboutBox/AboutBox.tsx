@@ -40,7 +40,7 @@ const AboutBox: React.FC = () => {
         </ImgWrapper>
         <ArticleWrapper>
           <header>
-            <h3>biegamPlockTeam</h3>
+            <h3>biegamPlock team</h3>
           </header>
           <p>
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet

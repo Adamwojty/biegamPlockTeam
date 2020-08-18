@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { FontWeight, Colors } from "../../../../assets/styles/const"
+import { FontWeight, FontSize, Colors } from "../../../../assets/styles/const"
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -25,4 +25,8 @@ export const Profile = styled.a`
   padding: 5px;
   color: ${Colors.WHITE};
   background-color: ${Colors.BLUE};
+`
+export const Date = styled.p`
+  font-size: ${FontSize.TEXT_XSMALL};
+  margin: 0;
 `

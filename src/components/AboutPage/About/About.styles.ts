@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import Image from "gatsby-image"
-import { Media } from "../../../assets/styles/const"
+import { Media, FontSize } from "../../../assets/styles/const"
 export const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
@@ -21,7 +21,6 @@ export const Img = styled(Image)`
 `
 export const ContentWrapper = styled.article`
   @media ${Media.TABLET} {
-    /* width: 70%; */
-    margin: 0 auto;
+    width: 90%;
   }
 `
